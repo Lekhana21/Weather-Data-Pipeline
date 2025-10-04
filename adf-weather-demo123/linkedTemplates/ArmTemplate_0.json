@@ -119,7 +119,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"filePath": {
+					"fileName": {
 						"type": "string"
 					}
 				},
@@ -128,10 +128,11 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"container": {
-							"value": "@dataset().filePath\n",
+						"fileName": {
+							"value": "@dataset().fileName",
 							"type": "Expression"
-						}
+						},
+						"container": "weather-raw"
 					}
 				},
 				"schema": {}
@@ -213,7 +214,10 @@
 								"referenceName": "DS_WeatherBlob",
 								"type": "DatasetReference",
 								"parameters": {
-									"filePath": "@concat('raw/weather-', formatDateTime(utcnow(),'yyyy-MM-dd-HH-mm'), '.json')"
+									"fileName": {
+										"value": "\n",
+										"type": "Expression"
+									}
 								}
 							}
 						]
