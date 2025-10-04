@@ -1,0 +1,9 @@
+{
+	"name": "adf-weather-demo123",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3dd6458a-29e6-4c7f-bcbd-e9062420b292",
+		"tenantId": "40808220-7cc1-49ed-988c-a16c79dbcd7b"
+	}
+}
