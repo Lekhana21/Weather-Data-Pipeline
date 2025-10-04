@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-weather-demo123"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_BlobStorage_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sqlweatherdemo.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "WeatherDB"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "sqluser"
+		},
+		"LS_HTTP_OpenWeather_properties_typeProperties_url": {
+			"value": "https://api.openweathermap.org/"
+		}
+	}
+}
