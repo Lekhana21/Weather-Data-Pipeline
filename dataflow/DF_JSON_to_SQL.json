@@ -12,45 +12,13 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [
-				{
-					"dataset": {
-						"referenceName": "DS_WeatherSQL",
-						"type": "DatasetReference"
-					},
-					"name": "sink1"
-				}
-			],
-			"transformations": [
-				{
-					"name": "DerivedWeatherColumns"
-				},
-				{
-					"name": "flatten1"
-				}
-			],
+			"sinks": [],
+			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'documentPerLine') ~> source1",
-				"flatten1 derive(longitude = toDecimal(coord.lon),",
-				"          main = ERROR_FUNCTION(''),",
-				"          weather = ERROR_FUNCTION(''),",
-				"          name = ERROR_FUNCTION('')) ~> DerivedWeatherColumns",
-				"source1 foldDown(unroll(),",
-				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1",
-				"DerivedWeatherColumns sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     documentForm: 'documentPerLine') ~> source1"
 			]
 		}
 	}
