@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "sample_weather.json",
+				"fileName": "sample_weather_fixed.json",
 				"container": "raw"
 			}
 		},
