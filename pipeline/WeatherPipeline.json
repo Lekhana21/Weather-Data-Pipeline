@@ -47,7 +47,10 @@
 						"referenceName": "DS_WeatherBlob",
 						"type": "DatasetReference",
 						"parameters": {
-							"filePath": "@concat('raw/weather-', formatDateTime(utcnow(),'yyyy-MM-dd-HH-mm'), '.json')"
+							"fileName": {
+								"value": "\n",
+								"type": "Expression"
+							}
 						}
 					}
 				]
