@@ -15,7 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "weather-raw"
+				"container": {
+					"value": "@dataset().filePath\n",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}
