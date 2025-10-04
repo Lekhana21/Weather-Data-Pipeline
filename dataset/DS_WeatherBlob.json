@@ -15,8 +15,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@dataset().fileName",
-				"container": "weather-raw"
+				"fileName": "sample_weather.json",
+				"container": "raw"
 			}
 		},
 		"schema": {}
