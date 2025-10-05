@@ -8,7 +8,7 @@
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
-		"LS_BlobStorage_connectionString": {
+		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
@@ -22,6 +22,9 @@
 		},
 		"LS_HTTP_OpenWeather_properties_typeProperties_url": {
 			"value": "https://api.openweathermap.org/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://weatheradlsgen2.dfs.core.windows.net/"
 		}
 	}
 }
