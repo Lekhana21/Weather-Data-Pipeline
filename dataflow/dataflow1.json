@@ -12,7 +12,11 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "flatten1"
@@ -31,7 +35,22 @@
 				"          records",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1"
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"flatten1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          lon = {records.coord.lon},",
+				"          lat = {records.coord.lat},",
+				"          temp = {records.main.temp},",
+				"          humidity = {records.main.humidity},",
+				"          name = {records.name},",
+				"          weather_id = {records.weather[0].id},",
+				"          weather_main = {records.weather[0].main},",
+				"          description = {records.weather[0].description},",
+				"          icon = {records.weather[0].icon}",
+				"     )) ~> sink1"
 			]
 		}
 	}
