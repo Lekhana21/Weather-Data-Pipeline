@@ -5,11 +5,14 @@
 		"factoryName": {
 			"value": "adf-weather-demo123"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_accountKey": {
-			"value": ""
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://weatheradlsgen2.dfs.core.windows.net/"
 		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"value": "sqlweatherdemo.database.windows.net"
@@ -22,9 +25,6 @@
 		},
 		"LS_HTTP_OpenWeather_properties_typeProperties_url": {
 			"value": "https://api.openweathermap.org/"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://weatheradlsgen2.dfs.core.windows.net/"
 		}
 	}
 }
