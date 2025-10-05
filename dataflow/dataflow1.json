@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DS_WeatherBlob_Gen2",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -38,6 +42,9 @@
 				"     skipDuplicateMapOutputs: false) ~> flatten1",
 				"flatten1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
