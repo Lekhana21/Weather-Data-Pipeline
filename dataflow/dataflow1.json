@@ -34,7 +34,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'arrayOfDocuments') ~> source1",
-				"source1 foldDown(unroll(records),",
+				"source1 foldDown(unroll(records.weather),",
 				"     mapColumn(",
 				"          records",
 				"     ),",
