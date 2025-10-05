@@ -24,6 +24,9 @@
 			"transformations": [
 				{
 					"name": "flatten1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -34,13 +37,22 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'arrayOfDocuments') ~> source1",
-				"source1 foldDown(unroll(records.weather),",
+				"source1 foldDown(unroll(records),",
 				"     mapColumn(",
 				"          records",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> flatten1",
-				"flatten1 sink(allowSchemaDrift: true,",
+				"flatten1 derive(lon = records.coord.lon,",
+				"          lat = records.coord.lat,",
+				"          temp = records.main.temp,",
+				"          humidity = records.main.humidity,",
+				"          city_name = records.name,",
+				"          weather_id = records.weather[0].id,",
+				"          weather_main = records.weather[0].main,",
+				"          description = records.weather[0].description,",
+				"          icon = records.weather[0].icon) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
 				"     preCommands: [],",
@@ -48,15 +60,15 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
-				"          lon = {records.coord.lon},",
-				"          lat = {records.coord.lat},",
-				"          temp = {records.main.temp},",
-				"          humidity = {records.main.humidity},",
-				"          name = {records.name},",
-				"          weather_id = {records.weather[0].id},",
-				"          weather_main = {records.weather[0].main},",
-				"          description = {records.weather[0].description},",
-				"          icon = {records.weather[0].icon}",
+				"          lon = {coord.lon},",
+				"          lat = {coord.lat},",
+				"          temp = {main.temp},",
+				"          humidity = {main.humidity},",
+				"          name = {name},",
+				"          weather_id = {weather.id},",
+				"          weather_main = {weather.main},",
+				"          description = {weather.description},",
+				"          icon = {weather.icon}",
 				"     )) ~> sink1"
 			]
 		}
