@@ -1,0 +1,19 @@
+{
+	"name": "DS_WeatherBlob_Gen2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample_weather_fixed.json",
+				"fileSystem": "weatherdata"
+			}
+		},
+		"schema": {}
+	}
+}
